@@ -1,5 +1,5 @@
 {
-  "name": "redux-toolkit",
+  "name": "@mtfe/redux-toolkit",
   "version": "1.0.4",
   "description": "supply useful tool functions for redux",
   "main": "lib/index.js",
@@ -7,21 +7,12 @@
     "build": "rm -rf lib && babel src --out-dir lib",
     "test": "mocha"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/yeatszhang/redux-toolkit.git"
-  },
   "keywords": [
     "redux",
     "utils",
     "helper"
   ],
-  "author": "yeatszhang",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/yeatszhang/redux-toolkit/issues"
-  },
-  "homepage": "https://github.com/yeatszhang/redux-toolkit#readme",
+  "author": "zhangyichi",
   "dependencies": {
     "lodash": "^3.10.1"
   }
