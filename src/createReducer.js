@@ -7,7 +7,7 @@ import isObject from 'lodash/lang/isObject';
  * @returns {Function}
  */
 export default function(funcMap, initialState) {
-  if (isObject(funcMap)) {
+  if (!isObject(funcMap)) {
     throw new Error('funcMap need to be a plain object');
   }
 

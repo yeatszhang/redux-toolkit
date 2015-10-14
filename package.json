@@ -2,7 +2,7 @@
   "name": "redux-toolkit",
   "version": "1.0.3",
   "description": "supply useful tool functions for redux",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "rm -rf lib && babel src --out-dir lib",
     "test": "mocha"
