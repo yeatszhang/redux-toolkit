@@ -1,6 +1,6 @@
 {
   "name": "@mtfe/redux-toolkit",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "supply useful tool functions for redux",
   "main": "lib/index.js",
   "scripts": {
