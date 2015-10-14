@@ -104,14 +104,14 @@ createAction('add', (num1, num2) => {
 })
 
 function (num1, num2) {
-  var other = num1 * num2;
+  var getAction = (num1, num2) => {
+    number1: num1,
+    number2: num2,
+    other: num1 * num2
+  };
   return {
     type: 'add',
-    payload: {
-      number1: num1,
-      number2: num2,
-      other
-    }
+    payload: getAction(num1, num2)
   };
 }
 ```
