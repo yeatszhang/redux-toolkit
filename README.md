@@ -1,16 +1,26 @@
 # redux-toolkit
 
-supply useful tool functions for redux
+## introduction
+
+提供实用的工具函数，改善使用redux的开发体验，提供代码可读性。
 
 ## installation
 
-`npm install redux-toolkit`
+`mnpm install @mtfe/redux-toolkit`
 
 ## Usage
 
 ### createReducer
 
-use a hash object to create a redux reducer. Don't need a hug switch block.
+避免使用switch碰到的问题：
+
+* 不用担心各个`case`下的变量冲突问题
+* 可以解构`action` 和 `state`
+* 使用箭头函数
+* 当swtich case 过多时，object 的速度会比 switch 更快
+* 不再会被 `break` 和 `default` 恶心
+
+下面是一个简单的reducer例子
 
 ```
 import { ADD_TODO, DELETE_TODO, EDIT_TODO, COMPLETE_TODO, COMPLETE_ALL, CLEAR_COMPLETED } from '../constants/ActionTypes';
@@ -21,7 +31,7 @@ const initialState = [{
   id: 0
 }];
 
-createReducer({
+export default createReducer({
   [ADD_TODO]: (state, { text }) => [{
     id: state.reduce((maxId, todo) => Math.max(todo.id, maxId), -1) + 1,
     completed: false,
@@ -51,9 +61,9 @@ createReducer({
 
 ### createAction
 
-supply a simple way to write action to save your time and make it esaier to read.
+提供更简单的方法去创建actionCreator。下面是通过actionCreator和普通方法进行对比。
 
-without payload
+**创建没有payload的action**
 
 ```
 createAction('showAll');
@@ -65,7 +75,9 @@ function() {
 }
 ```
 
-string payload
+**只有一个携带值**
+
+当只有一个需要传递给`reducer`的值时，接受一个key。
 
 ```
 createAction('add', 'value');
@@ -78,7 +90,9 @@ function(value) {
 }
 ```
 
-object payload
+**传递多个值**
+
+接受一个keys数组，会将参数按顺序放置在`action`的`payload`属性中。
 
 ```
 createAction('add', ['num1', 'num2']);
@@ -94,7 +108,9 @@ function (num1, num2) {
 }
 ```
 
-create by a function
+**根据函数创建action**
+
+接受一个将参数处理为`payload`的函数
 
 ```
 createAction('add', (num1, num2) => {
