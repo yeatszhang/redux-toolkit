@@ -6,9 +6,11 @@
 
 ## installation
 
-`mnpm install @mtfe/redux-toolkit`
+`mnpm install redux-toolkit`
 
 ## Usage
+
+`import { createAction, createReducer, debugMiddleware } from 'redux-toolkit'`
 
 ### createReducer
 
@@ -85,7 +87,9 @@ createAction('add', 'value');
 function(value) {
   return {
     type: 'add',
-    value: value
+    payload: {
+      value: value
+    }
   };
 }
 ```
@@ -131,3 +135,13 @@ function (num1, num2) {
   };
 }
 ```
+
+## debugMiddleware
+
+提供一个debug的middleware
+
+### features
+
+* if dispatched action don't match [FSA](https://github.com/acdlite/flux-standard-action) rules, will throw Error
+* print the info of actions
+* print the old state before and after action dispatched

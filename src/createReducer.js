@@ -1,4 +1,6 @@
 import isObject from 'lodash/lang/isObject';
+import invariant from 'invariant';
+import { isFSA } from 'flux-standard-action';
 
 /**
  * an elegance way to write reducer
@@ -7,11 +9,11 @@ import isObject from 'lodash/lang/isObject';
  * @returns {Function}
  */
 export default function(funcMap, initialState) {
-  if (!isObject(funcMap)) {
-    throw new Error('funcMap need to be a plain object');
+	invariant(isObject(funcMap), 'funcMap need to be a plain object')
+  return (state = initialState, action = null) =>  {
+  	invariant(isFSA(action), `action don't match FSA:\n${action.toString()}`);
+  	return funcMap.hasOwnProperty(action.type) ?
+	    funcMap[action.type](state, action) :
+	    state;
   }
-
-  return (state = initialState, action = null) =>  funcMap.hasOwnProperty(action.type) ?
-    funcMap[action.type](state, action) :
-    state;
 }

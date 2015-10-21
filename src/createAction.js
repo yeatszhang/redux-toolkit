@@ -10,7 +10,9 @@ export default function(type, payload) {
   } else if (typeof  payload === 'string') {
     actionCreator = args => ({
       type,
-      [payload]: args[0]
+      payload: {
+        [payload]: args[0]
+      }
     });
   } else if (isArray(payload)) {
     actionCreator = args => ({
@@ -27,6 +29,8 @@ export default function(type, payload) {
     });
   }
   return (...args) => {
+    const action = actionCreator(args);
+
     return actionCreator(args);
   };
 }
