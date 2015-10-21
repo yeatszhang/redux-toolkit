@@ -1,7 +1,7 @@
 {
-  "name": "@mtfe/redux-toolkit",
+  "name": "redux-toolkit",
   "version": "1.0.7",
-  "description": "supply useful tool functions for redux",
+  "description": "supply useful utils for redux",
   "main": "lib/index.js",
   "scripts": {
     "build": "rm -rf lib && babel src --out-dir lib",
@@ -12,7 +12,7 @@
     "utils",
     "helper"
   ],
-  "author": "zhangyichi",
+  "author": "yeatszhang",
   "dependencies": {
     "debug": "^2.2.0",
     "flux-standard-action": "^0.6.0",
