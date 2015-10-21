@@ -7,6 +7,10 @@
     "build": "rm -rf lib && babel src --out-dir lib",
     "test": "mocha"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yeatszhang/redux-toolkit"
+  },
   "keywords": [
     "redux",
     "utils",

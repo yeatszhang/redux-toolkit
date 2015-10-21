@@ -4,6 +4,10 @@
 
 提供实用的工具函数，改善使用redux的开发体验，提供代码可读性。
 
+* `createReducer` a functional way to write reducer
+* `createAction`  a simple way to write action
+* `debugMiddleware` a useful debug middleware
+
 ## installation
 
 `mnpm install redux-toolkit`
