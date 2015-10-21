@@ -148,4 +148,4 @@ function (num1, num2) {
 
 * if dispatched action don't match [FSA](https://github.com/acdlite/flux-standard-action) rules, will throw Error
 * print the info of actions
-* print the old state before and after action dispatched
+* print the old state after action dispatched

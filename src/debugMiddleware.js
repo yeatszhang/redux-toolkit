@@ -3,16 +3,13 @@ import { isFSA } from 'flux-standard-action';
 import invariant from 'invariant';
 
 // 打印触发的action
-function logMiddleware({ getState }) {
+export default function({ getState }) {
   return function(next) {
     return function(action) {
-      invariant(isFSA(action), `action don't match FSA:\n${action.toString()}`);
-      debug('state: old')(getState());
+      invariant(isFSA(action), `action don't match FSA:\n${JSON.stringify(action)}`);
       debug('action')(JSON.stringify(action));
       next(action);
-      debug('state: new')(getState());
+      debug('nextState')(getState());	
     };
   };
 }
-
-export default logMiddleware;
