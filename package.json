@@ -1,6 +1,6 @@
 {
   "name": "redux-toolkit",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "supply useful utils for redux",
   "main": "lib/index.js",
   "scripts": {
